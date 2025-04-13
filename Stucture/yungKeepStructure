@@ -1,0 +1,22 @@
+keepclone/
+├── backend/            # Application Spring Boot
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/keepclone/
+│       │   │   ├── config/          # Configuration JWT et sécurité
+│       │   │   ├── controller/      # Contrôleurs REST
+│       │   │   ├── model/           # Entités JPA
+│       │   │   ├── repository/      # Interfaces repository
+│       │   │   ├── service/         # Services métier
+│       │   │   └── exception/       # Gestion des exceptions
+│       │   └── resources/           # Configurations et propriétés
+│       └── test/                    # Tests unitaires
+├── frontend/           # Application JavaScript
+│   ├── css/            # Styles CSS
+│   ├── js/             # Scripts JavaScript
+│   │   ├── api/        # Appels API vers le backend
+│   │   ├── components/ # Composants UI réutilisables
+│   │   ├── views/      # Vues principales
+│   │   └── utils/      # Fonctions utilitaires
+│   └── index.html      # Page principale
+└── README.md           # Documentation du projet
