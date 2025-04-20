@@ -1,4 +1,4 @@
-keepclone/
+yungkeep/
 ├── backend/            # Application Spring Boot
 │   └── src/
 │       ├── main/
@@ -20,3 +20,47 @@ keepclone/
 │   │   └── utils/      # Fonctions utilitaires
 │   └── index.html      # Page principale
 └── README.md           # Documentation du projet
+
+DeepSeek
+yungkeep/
+├── backend/            # Spring Boot
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/keepclone/
+│       │   │   ├── config/
+│       │   │   ├── controller/
+│       │   │   ├── model/
+│       │   │   ├── repository/
+│       │   │   ├── service/
+│       │   │   └── exception/
+│       │   └── resources/
+│       │       ├── static/          # ← Frontend vanilla sera copié ici
+│       │       ├── templates/
+│       │       └── application.yml
+│       └── test/
+│
+├── frontend/           # Vanilla JS pur
+│   ├── css/
+│   │   ├── main.css    # Styles globaux
+│   │   └── components/ # Styles par composant
+│   ├── js/
+│   │   ├── api/
+│   │   │   ├── auth.js   # API Auth
+│   │   │   └── notes.js  # API Notes
+│   │   ├── components/
+│   │   │   ├── modal.js
+│   │   │   └── navbar.js
+│   │   ├── views/
+│   │   │   ├── auth/
+│   │   │   │   ├── login.js
+│   │   │   │   └── register.js
+│   │   │   └── notes/
+│   │   │       ├── list.js
+│   │   │       └── editor.js
+│   │   ├── utils/
+│   │   │   ├── dom.js    # Helpers DOM
+│   │   │   └── storage.js # LocalStorage
+│   │   └── app.js       # Point d'entrée JS
+│   └── index.html       # HTML principal
+│
+└── README.md
