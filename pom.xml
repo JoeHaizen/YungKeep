@@ -8,7 +8,7 @@
         <version>3.2.6</version>
         <relativePath/>
     </parent>
-    <groupId>com.yungkeep</groupId>
+    <groupId>backend.com.yungkeep</groupId>
     <artifactId>yungkeep</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Yungkeep</name>
@@ -98,10 +98,12 @@
 
     <build>
         <plugins>
+            <!-- Plugin Spring Boot avec mainClass spécifiée -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <mainClass>backend.com.yungkeep.YungkeepApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -109,7 +111,15 @@
                         </exclude>
                     </excludes>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
             <!-- Plugin resources pour résoudre le problème d'encodage -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -122,6 +132,7 @@
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
+
             <!-- Configuration du compilateur pour Lombok -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -138,6 +149,29 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+
+            <!-- Copie des ressources frontend -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-frontend</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/src/main/resources/static</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>../../frontend</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
